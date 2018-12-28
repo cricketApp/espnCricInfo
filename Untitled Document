@@ -1,0 +1,11 @@
+@Test
+public void player1StartsWithTwoTripleTwenties() {
+  CricketPlayer player1 = cricketGame.getPlayer1();
+  player1.add(new Throw(TRIPLE, TWENTY));
+  player1.add(new Throw(TRIPLE, TWENTY));
+  player1.add(new Throw(ELEVEN, SINGLE));
+
+  assertEquals(60, cricketGame.getPlayer2().getScore());
+  assertEquals(3, player1.getHitCount(TWENTY));
+  assertEquals(0, player1.getScore());
+}
